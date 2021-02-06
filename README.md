@@ -1,2 +1,14 @@
 # fake_billet_train
-Fake un screen de billet de train TGV SNCF
+
+FUCK LE 17
+
+
+
+Le faux billet généré est 'fake_image.jpg'
+depuis le terminal, run ces 3 commandes :
+
+cd fake_billet_train
+
+pip install -r requirements.txt
+
+python main.py
