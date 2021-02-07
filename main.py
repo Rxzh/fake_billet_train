@@ -64,31 +64,31 @@ def main():
 
     date = jour[:3]+'. ' + n_jour +' '+ mois[:3]+'. ' + heure_depart
 
+
+    font1 = ImageFont.truetype('fonts/LTInternet-Regular.ttf', size = 30)
+    font2 = ImageFont.truetype('fonts/font_heures_bold.otf', size = 27)
+
     #Ajout de l'heure en haut
-    font = ImageFont.truetype('fonts/LTInternet-Regular.ttf', size = 30)
-    image_editable.text(xy = (41,15), text = heure_actuelle, fill = (255, 255, 255), font=font, )#stroke_width= 0)
+    
+    image_editable.text(xy = (41,15), text = heure_actuelle, fill = (255, 255, 255), font=font1)
 
     #Ajout de l'heure d'arrivee
-    font = ImageFont.truetype('fonts/font_heures_bold.otf', size = 27)
-    image_editable.text(xy = (35,1360), text = heure_arrivee[0], fill = (0, 0, 0), font=font,)# stroke_width= 1)
-    image_editable.text(xy = (48,1360), text = heure_arrivee[1], fill = (0, 0, 0), font=font,)# stroke_width= 1)
-    image_editable.text(xy = (65,1360), text = heure_arrivee[2], fill = (0, 0, 0), font=font,)# stroke_width= 1)
-    image_editable.text(xy = (80,1360), text = heure_arrivee[3], fill = (0, 0, 0), font=font,)# stroke_width= 1)
-    image_editable.text(xy = (95,1360), text = heure_arrivee[4], fill = (0, 0, 0), font=font,)# stroke_width= 1)
-
-    #Ajout de l'heure de depart
-    font = ImageFont.truetype('fonts/font_heures_bold.otf', size = 27)
-    image_editable.text(xy = (35,717), text = heure_depart[0], fill = (0, 0, 0), font=font,)# stroke_width= 1)
-    image_editable.text(xy = (48,717), text = heure_depart[1], fill = (0, 0, 0), font=font,)# stroke_width= 1)
-    image_editable.text(xy = (65,717), text = heure_depart[2], fill = (0, 0, 0), font=font,)# stroke_width= 1)
-    image_editable.text(xy = (80,717), text = heure_depart[3], fill = (0, 0, 0), font=font,)# stroke_width= 1)
-    image_editable.text(xy = (95,717), text = heure_depart[4], fill = (0, 0, 0), font=font,)# stroke_width= 1)
+    
+    L_x = [35,48,65,80,95]
+    for x in L_x:
+        image_editable.text(xy = (x,1360), text = heure_arrivee[L_x.index(x)], fill = (0, 0, 0), font=font2) #Ajout de l'heure d'arrivee
+        image_editable.text(xy = (x,717), text = heure_depart[L_x.index(x)], fill = (0, 0, 0), font=font2) #Ajout de l'heure de depart 
 
     #Ajout de la date de depart en haut
 
-    font = ImageFont.truetype('fonts/font_heures_bold.otf', size = 27)
-    image_editable.text(xy = (247,268), text = date, fill = (250, 250, 250), font=font,)# stroke_width= 1)
-    image_editable.text(xy = (320,235), text = "ALLER", fill = (250, 250, 250), font=font,)# stroke_width= 1)
+    image_editable.text(xy = (247,268), text = date, fill = (250, 250, 250), font=font2)
+    image_editable.text(xy = (320,235), text = "ALLER", fill = (250, 250, 250), font=font2)
+
+    #Ajout de la date de depart en haut
+
+
+    image_editable.text(xy = (247,268), text = date, fill = (250, 250, 250), font=font2)
+    image_editable.text(xy = (320,235), text = "ALLER", fill = (250, 250, 250), font=font2)
 
 #   Sauvegarde
     image.save("fake_image.jpg")
