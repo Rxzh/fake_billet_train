@@ -1,9 +1,5 @@
 # fake_billet_train
 
-FUCK LE 17
-
-
-
 Le faux billet généré est 'fake_image.jpg'
 
 depuis le terminal, run ces 3 commandes :
